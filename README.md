@@ -1,4 +1,4 @@
-# AP AR Workflow with Google ADK
+# AR Workflow with Google ADK
 
 This project implements the AP AR workflow described in the provided diagram using Google's Agent Development Kit (ADK).
 It processes raw data (assumed to be the output of a math model optimization, like `output/ar_results.json`) through a series of agents executed in parallel and sequentially.
