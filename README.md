@@ -43,7 +43,7 @@ d:\Download\AP AR Workflow development/
     *   Installing the Google Cloud CLI: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
     *   Logging in: `gcloud auth application-default login`
     *   Setting your project: `gcloud config set project YOUR_PROJECT_ID`
-    The example uses `gemini-1.5-pro-preview-0514`. You may need to ensure this model is available to you and your environment is configured for it (e.g., API keys, correct SDK versions).
+    The example uses `gemini-2.5-pro-preview-03-25`. You may need to ensure this model is available to you and your environment is configured for it (e.g., API keys, correct SDK versions).
 
 4.  **Prepare Input Data:**
     Ensure your input file `output/ar_results.json` exists and contains the data in the expected JSON format from your math model.
@@ -70,7 +70,7 @@ The script will:
 
 *   **`agents.py`**: Defines each step of your workflow (e.g., `ActionItemsAgent`, `ValidateActionItemsAgent`) as an `LlmAgent`. Each agent is configured with:
     *   A name and description.
-    *   The Gemini model to use (`gemini-1.5-pro-preview-0514`).
+    *   The Gemini model to use (`gemini-2.5-pro-preview-03-25`).
     *   Instructions loaded from a corresponding `.j2` template file in the `templates/` directory.
     *   An `output_key` which determines how its result is named in the workflow's state.
 *   **`main.py`**: 
@@ -83,6 +83,6 @@ The script will:
 ## Important Notes
 
 *   **ADK Version & Imports:** The ADK library is relatively new and its API might evolve. The imports and class names (`LlmAgent`, `AgentRuntime`, `Sequential`, `Parallel`) are based on common usage patterns. Ensure they match the version of ADK you are using. Specifically, `AgentRuntime` was imported from `adk.agent_runtime` which seems to be a common location.
-*   **LLM Model:** The code uses `gemini-1.5-pro-preview-0514`. Ensure this model ID is correct and accessible in your environment. You might need to adjust it based on availability or your specific Google Cloud setup.
+*   **LLM Model:** The code uses `gemini-2.5-pro-preview-03-25`. Ensure this model ID is correct and accessible in your environment. You might need to adjust it based on availability or your specific Google Cloud setup.
 *   **Error Handling & Input/Output Keys:** The current `main.py` has basic error handling and makes assumptions about output keys (e.g., `formatted_response`). You'll likely need to refine this based on the actual outputs of your LLM agents and how you want data to flow between them.
 *   **Jinja Template Content:** The success of this workflow entirely depends on the quality of the instructions you provide in the `.j2` template files. These prompts will guide the LLM for each specific task.
