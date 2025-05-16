@@ -1,0 +1,5 @@
+google-cloud-aiplatform  # ADK is often used with Vertex AI
+ginza2
+# The ADK library itself (google/adk-python) might need to be installed from GitHub if not on PyPI
+# For example: pip install git+https://github.com/google/adk-python.git
+# Or if it's packaged as part of google-cloud-aiplatform or a similar SDK.
